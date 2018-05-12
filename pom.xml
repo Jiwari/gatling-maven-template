@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>wermuth</groupId>
-	<artifactId>maven-gatling-template</artifactId>
+	<groupId>com.github.jiwari</groupId>
+	<artifactId>gatling-maven-template</artifactId>
 	<version>0.0.1</version> 
 
 	<properties>
@@ -13,12 +13,7 @@
 		<scala-maven-plugin.version>3.2.2</scala-maven-plugin.version>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
-		<encoding>UTF-8</encoding>
 		<scala.version>2.11.7</scala.version>
-		<encoding>UTF-8</encoding>
-		<ppf.usuariosParalelos>1</ppf.usuariosParalelos>
-		<ppf.url.prefixo>http://portal.realizesolucoesfinanceiras.local/portal-realize-</ppf.url.prefixo>
-		<ppf.embossing>true</ppf.embossing>
 	</properties>
 
 	<dependencyManagement>
@@ -87,10 +82,8 @@
 							<!-- <simulationsFolder>foo</simulationsFolder> -->
 							<propagateSystemProperties>true</propagateSystemProperties>
 							<jvmArgs>
-								<jvmArg>-Dppf.url.prefixo=${ppf.url.prefixo}</jvmArg>
-								<jvmArg>-Dppf.usuariosParalelos=${ppf.usuariosParalelos}</jvmArg>
+								<jvmArg>-Dsome.arg=somevalue</jvmArg>
 							</jvmArgs>
-							<argLine>-Dfile.encoding=UTF-8</argLine>
 						</configuration>
 						<phase>test</phase>
 						<goals>

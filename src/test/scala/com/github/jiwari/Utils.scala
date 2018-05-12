@@ -1,7 +1,6 @@
-package config
+package com.github.jiwari
 
 import io.gatling.core.Predef._
-import io.gatling.http.Predef._
 import io.gatling.core.structure.ChainBuilder
 
 object Utils {
@@ -20,19 +19,13 @@ object Utils {
   }
 
   def getKey(session: Session, keyName: String): String = {
-    return keyExtractor(session.attributes.get(keyName))
+    keyExtractor(session.attributes.get(keyName))
   }
 
   def keyExtractor(keyOption: Option[Any]): String = {
-    return keyExtractor(keyOption, true)
-  }
-
-  def keyExtractor(keyOption: Option[Any], end: Boolean): String = {
-    val key = keyOption.toString()
-    if (key.contains("Some(")) {
-      if (end)
-        return key.substring(5).replace(")", "")
-      else return key.substring(5).replace(")", ",")
-    } else return "NULL"
+    keyOption match {
+      case Some(key) => key.toString
+      case None => ""
+    }
   }
 }

@@ -1,11 +1,11 @@
-package config
+package com.github.jiwari
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import config._
+import io.gatling.http.config.HttpProtocolBuilder
 
 object Http {
-  val httpProtocol = http
+  val httpProtocol: HttpProtocolBuilder = http
     .baseURL(Configuration.url)
     .disableFollowRedirect
     .inferHtmlResources()
